@@ -11,7 +11,7 @@ const DADOS_DO_GRUPO = {
   titulo: "TÍTULO DO TRABALHO",                    // ← Troque pelo título
   descricao: "DESCRIÇÃO BÁSICA DO SEU TRABALHO",   // ← Troque pela descrição
   materias: ["Programação", "Física", "Robótica"], // ← Troque pelas matérias
-  videoYouTube: "dQw4w9WgXcQ",                    // ← ID do vídeo do YouTube
+  videoYouTube: "u4lcUooNNLY",                    // ← ID do vídeo do YouTube ID E SEMPRE O QUE ESTA NO FINAL DO LINK, DEPOIS DO V= EX: https://www.youtube.com/watch?v=**dQw4w9WgXcQ**
   imagem: "imagem-principal.jpg",                  // ← Nome da imagem na pasta IMAGENS
 };
 
