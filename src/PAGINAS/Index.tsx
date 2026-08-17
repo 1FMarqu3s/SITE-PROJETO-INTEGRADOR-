@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import heroImage from "@/IMAGENS/hero-home-decor.jpg";
+import heroImage from "@/assets/hero-home-decor.jpg";
 
 // Edite aqui: adicione ou remova vídeos. Basta o ID do YouTube.
 const VIDEOS = [
