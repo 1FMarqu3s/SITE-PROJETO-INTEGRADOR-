@@ -9,6 +9,9 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        muted: "hsl(var(--muted))",
+        "muted-foreground": "hsl(var(--muted-foreground))",
+        primary: "hsl(var(--primary))",
       },
       borderRadius: {
         sm: "calc(var(--radius) - 4px)",

@@ -18,7 +18,7 @@
     "noUnusedParameters": false,
     "paths": {
       "@/*": [
-        "./src/*"
+        "SRC/*"
       ]
     },
     "skipLibCheck": true,
@@ -27,6 +27,6 @@
     "useDefineForClassFields": true
   },
   "include": [
-    "src"
+    "SRC"
   ]
 }

@@ -9,6 +9,9 @@
     --border: 220 13% 91%;
     --ring: 100 55% 20%;
     --radius: 0.25rem;
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 46%;
+    --primary: 220 13% 18%;
   }
 
   * {
