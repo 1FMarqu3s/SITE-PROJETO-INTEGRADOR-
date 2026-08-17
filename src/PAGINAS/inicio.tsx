@@ -4,7 +4,7 @@ import heroImage from "@/IMAGENS/imagem-principal.jpg";
 
 // Edite aqui: adicione ou remova vídeos. Basta o ID do YouTube.
 const VIDEOS = [
-  { id: "dQw4w9WgXcQ", title: "Convite: Grand Opening" },
+  { id: "nqDhZT67500&list=RDnqDhZT67500&start_radio=1", title: "TITULO DO VIDEO AQUI (MUSICA DO BLACK EYED PEAS" },
   // { id: "OUTRO_ID", title: "Tour pela loja" },
 ];
 
