@@ -1,127 +1,148 @@
-Documentação Técnica - FERNANDO MARQUES
-PROJETO INTEGRADOR — README
+17 de agosto de 2026
 
-Guia de configuração, execução e edição do projeto
+Projeto Integrador
+
+GUIA DO ALUNO
+
+Instruções para edição e apresentação do projeto
 
 17 de agosto de 2026
 
 ---
 
-### 1. Projeto Integrador — Apresentações
+### 1. Como abrir o projeto
 
-Projeto web desenvolvido para apresentações das disciplinas de Programação, Física e Robótica. A aplicação utiliza tecnologias modernas para garantir performance e facilidade de customização pelos alunos.
+Este guia mostra como editar e apresentar o seu projeto. Siga os passos abaixo para garantir que tudo funcione corretamente.
 
-Desenvolvido com: React, TypeScript, Vite, Tailwind CSS e Bun.
+1. Abra o link do projeto no navegador (fornecido pelo professor).
+2. Clique em **"Fork"** no canto superior direito para criar sua própria cópia de trabalho.
+3. O editor de código abrirá automaticamente no seu navegador — **não é necessário instalar nada** no computador da escola.
 
-### 2. Como rodar o projeto
+### 2. Como editar o seu projeto
 
-1. Instale o **Bun** (bun.sh) no seu computador.
-2. Abra a pasta do projeto no **VS Code**.
-3. Abra o terminal do VS Code (`Ctrl + '`).
-4. Instale as dependências: `bun install`
-5. Inicie o servidor de desenvolvimento: `bun dev`
-6. Abra o navegador no endereço que aparecer no terminal (geralmente `http://localhost:8080`).
+Abra o arquivo `src/PAGINAS/inicio.tsx` e edite **APENAS** o bloco localizado no topo do arquivo. Este é o local onde todas as informações do seu grupo devem ser inseridas.
 
-### 3. Estrutura do projeto
+
+Importante: O bloco abaixo é a parte mais importante do código para o seu grupo.
+
+
+```tsx
+// 
+//  ✏️ EDITAR AQUI — DADOS DO SEU GRUPO
+//  Troque os textos entre as aspas
+// 
+
+const DADOS_DO_GRUPO = {
+  titulo: "TÍTULO DO TRABALHO",                    // ← Troque pelo título
+  descricao: "DESCRIÇÃO BÁSICA DO SEU TRABALHO",   // ← Troque pela descrição
+  materias: ["Programação", "Física", "Robótica"], // ← Troque pelas matérias
+  videoYouTube: "dQw4w9WgXcQ",                    // ← ID do vídeo do YouTube
+  imagem: "imagem-principal.jpg",                  // ← Nome da imagem na pasta IMAGENS
+};
+
+// 
+//  ⚙️ NÃO EDITAR NADA ABAIXO DESTA LINHA
+// 
+```
+
+
+Atenção: NÃO altere nada abaixo da linha "NÃO EDITAR NADA ABAIXO DESTA LINHA", pois isso pode quebrar o funcionamento do site.
+
+
+### 3. Como trocar a imagem
+
+Para personalizar o fundo do seu projeto com uma imagem própria:
+
+1. Arraste o seu arquivo de imagem para dentro da pasta `src/IMAGENS/`.
+2. No bloco `DADOS_DO_GRUPO` (mostrado acima), troque o nome do arquivo na linha da imagem.
+3. Exemplo: `imagem: "SUA_IMAGEM.jpg"`.
+
+*Formatos aceitos: .jpg, .png, .webp*
+
+### 4. Como trocar o vídeo do YouTube
+
+O vídeo será exibido quando alguém clicar no botão de reprodução:
+
+1. Abra o vídeo desejado no YouTube.
+2. Copie o **ID** da URL (o código que vem logo após o `v=`).
+   *Exemplo: https://www.youtube.com/watch?v=**AQUI_ESTA_O_ID***
+3. No bloco `DADOS_DO_GRUPO`, substitua o código antigo pelo seu:
+   `videoYouTube: "SEU_ID_AQUI"`
+
+
+Nota: O vídeo precisa ter a opção "Permitir incorporação" ativada nas configurações do YouTube Studio para funcionar no site.
+
+
+### 5. Como trocar as matérias
+
+Você pode ajustar a lista de matérias conforme a necessidade do seu grupo na linha `materias`:
+
+*   **Para 3 matérias:** `materias: ["Programação", "Física", "Robótica"],`
+*   **Para 4 matérias:** `materias: ["Programação", "Física", "Robótica", "Química"],`
+*   **Para 2 matérias:** `materias: ["Programação", "Física"],`
+
+### 6. Como trocar as cores
+
+Se o grupo desejar mudar a identidade visual, abra o arquivo `src/estilos.css` e edite os valores na seção `:root`. Os valores utilizam o formato **HSL** (Matiz, Saturação, Luminosidade).
+
+```css
+:root {
+  --background: 0 0% 100%;        /* Cor de fundo */
+  --foreground: 220 13% 18%;      /* Cor do texto principal */
+  --primary: 220 13% 18%;         /* Cor de destaque */
+  --muted: 220 13% 95%;           /* Cor de fundo suave */
+  --muted-foreground: 220 9% 46%; /* Cor de texto suave */
+}
+```
+
+### 7. Como apresentar o projeto
+
+No dia da apresentação para os pais e professores:
+
+1. Abra o link final do seu projeto no navegador.
+2. Clique no ícone de janela (**"Open in new tab"**) localizado no canto do preview.
+3. O site abrirá em tela cheia, ocultando o código.
+4. Clique no botão **"▶ Assistir vídeo"** para iniciar a apresentação audiovisual.
+
+### 8. Estrutura do projeto
+
+Para sua referência, aqui está como os arquivos estão organizados:
 
 ```text
 projeto/
-├── public/              ← Arquivos estáticos (vazia por padrão)
+├── public/              ← Arquivos estáticos (vazia)
 ├── src/
-│   ├── IMAGENS/         ← Imagens e arquivos de mídia
+│   ├── IMAGENS/         ← Coloque sua imagem aqui
 │   │   └── imagem-principal.jpg
 │   ├── PAGINAS/         ← Páginas do site
-│   │   ├── inicio.tsx          ← Página principal (home)
-│   │   └── NaoEncontrado.tsx   ← Página 404
-│   ├── App.tsx          ← Define as rotas do site
-│   ├── estilos.css      ← Estilos globais (cores, fontes)
-│   ├── main.tsx         ← Arquivo que inicia o React
-│   └── vite-env.d.ts    ← Tipos do Vite (não editar)
-├── index.html           ← HTML base do site
-├── package.json         ← Lista de dependências
-├── tailwind.config.ts   ← Configuração do Tailwind CSS
-├── vite.config.ts       ← Configuração do Vite
-└── README.md            ← Este arquivo
+│   │   ├── inicio.tsx          ← EDITAR AQUI (dados do grupo)
+│   │   └── NaoEncontrado.tsx   ← Página 404 (não editar)
+│   ├── App.tsx          ← Rotas (não editar)
+│   ├── estilos.css      ← Editar cores aqui
+│   ├── main.tsx         ← Inicialização (não editar)
+│   └── vite-env.d.ts    ← Tipos (não editar)
+├── index.html           ← HTML base (não editar)
+├── package.json         ← Dependências (não editar)
+└── ...
 ```
 
-### 4. O que você pode editar
+### 9. Resumo — O que cada grupo precisa fazer
 
-#### 4.1 Trocar o título e a descrição
-Abra src/PAGINAS/inicio.tsx e procure pelo bloco de código abaixo para realizar as alterações de texto do seu grupo:
+1.  Abrir o link e clicar em **"Fork"**.
+2.  Abrir o arquivo `src/PAGINAS/inicio.tsx`.
+3.  Editar **APENAS** o bloco `DADOS_DO_GRUPO` (Título, Descrição, Matérias, ID do Vídeo).
+4.  Fazer o upload da imagem para a pasta `src/IMAGENS/`.
+5.  (Opcional) Personalizar as cores em `src/estilos.css`.
+6.  Salvar as alterações e conferir o resultado no preview lateral.
+7.  No momento da apresentação, utilizar o modo tela cheia.
 
-```tsx
+### 10. Dúvidas e Problemas Comuns
 
-  TÍTULO DO
-  
-  TRABALHO
+Se o site parar de funcionar ou não carregar as informações:
 
-
-XXXXXXXXXXXXXX (DESCRIÇÃO BÁSICA DO SEU TRABALHO)
-```
-
-#### 4.2 Trocar a imagem
-1. Coloque sua imagem na pasta `src/IMAGENS/`.
-2. No arquivo `src/PAGINAS/inicio.tsx`, troque o nome no import:
-`import heroImage from "@/IMAGENS/SUA_IMAGEM.jpg";`
-
-#### 4.3 Trocar o vídeo do YouTube
-No arquivo src/PAGINAS/inicio.tsx, localize a constante de vídeos. O ID pode ser encontrado na URL do vídeo após o parâmetro v=.
-
-```tsx
-const VIDEOS = [
-  { id: "dQw4w9WgXcQ", title: "Convite: Grand Opening" },
-  // { id: "OUTRO_ID", title: "Tour pela loja" },
-];
-```
-
-#### 4.4 Trocar as matérias
-Localize os parágrafos abaixo em src/PAGINAS/inicio.tsx e substitua pelos nomes das matérias do seu projeto:
-
-```html
-Programação
-Física
-Robótica
-```
-
-#### 4.5 Trocar as cores
-Abra src/estilos.css e edite as variáveis na seção :root. Os valores utilizam o formato HSL (Matiz, Saturação, Luminosidade).
-
-```css
---background: 0 0% 100%;        /* Cor de fundo */
---foreground: 220 13% 18%;      /* Cor do texto principal */
---primary: 220 13% 18%;         /* Cor de destaque */
---muted: 220 13% 95%;           /* Cor de fundo suave */
---muted-foreground: 220 9% 46%; /* Cor de texto suave */
-```
-
-### 5. Comandos disponíveis
-
-Utilize os comandos abaixo no terminal para gerenciar o ciclo de vida do projeto:
-
-*   **`bun install`**: Instala todas as dependências necessárias.
-*   **`bun dev`**: Inicia o ambiente de desenvolvimento com Hot Module Replacement (HMR).
-*   **`bun run build`**: Compila e otimiza o projeto para produção.
-*   **`bun run preview`**: Visualiza localmente o build final gerado.
-
-### 6. Tecnologias usadas
-
-*   **React**: Biblioteca para construção de interfaces de usuário.
-*   **TypeScript**: Adiciona tipagem estática ao JavaScript, reduzindo erros.
-*   **Vite**: Ferramenta de build extremamente rápida para projetos modernos.
-*   **Tailwind CSS**: Framework CSS para estilização rápida via classes utilitárias.
-*   **Bun**: Runtime "all-in-one" e gerenciador de pacotes ultra veloz.
-*   **React Router**: Gerenciamento de navegação e rotas dinâmicas.
-*   **Lucide React**: Biblioteca de ícones leves e consistentes.
-
-### 7. Dúvidas e Solução de Problemas
-
-Caso encontre dificuldades técnicas, siga os passos de verificação abaixo:
-
-1. Verifique se o Bun está instalado corretamente executando `bun --version`.
-2. Tente limpar o cache e reinstalar as dependências com `bun install`.
-3. Reinicie o processo de desenvolvimento com `bun dev`.
-4. Se o VS Code indicar erros sublinhados em vermelho, verifique os detalhes na aba **"Problems"** (`Ctrl + Shift + M`).
+*   Verifique se você não apagou acidentalmente as **aspas** (`" "`) ou as **vírgulas** (`,`) ao final das linhas.
+*   Confirme se o nome da imagem no código é exatamente igual ao nome do arquivo na pasta (incluindo `.jpg` ou `.png`).
+*   Certifique-se de que o ID do vídeo do YouTube está correto.
+*   Caso o erro persista, verifique a aba **"Problems"** no rodapé do editor ou peça AJUDAA - estou aqui prof Fernando haha.
 
 ---
-
-*Documento elaborado em 17 de agosto de 2026. As informações contidas são de responsabilidade do solicitante.*

@@ -2,29 +2,36 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import heroImage from "@/IMAGENS/imagem-principal.jpg";
 
-// Edite aqui: adicione ou remova vídeos. Basta o ID do YouTube.
-const VIDEOS = [
-  { id: "4JWAVblw4E0", title: "TITULO DO VIDEO AQUI (MUSICA" },
-  // { id: "OUTRO_ID", title: "Tour pela loja" },
-];
+// 
+//  ✏️ EDITAR AQUI — DADOS DO SEU GRUPO
+//  Troque os textos entre as aspas
+// 
+
+const DADOS_DO_GRUPO = {
+  titulo: "TÍTULO DO TRABALHO",                    // ← Troque pelo título
+  descricao: "DESCRIÇÃO BÁSICA DO SEU TRABALHO",   // ← Troque pela descrição
+  materias: ["Programação", "Física", "Robótica"], // ← Troque pelas matérias
+  videoYouTube: "dQw4w9WgXcQ",                    // ← ID do vídeo do YouTube
+  imagem: "imagem-principal.jpg",                  // ← Nome da imagem na pasta IMAGENS
+};
+
+// 
+//  ⚙️ NÃO EDITAR NADA ABAIXO DESTA LINHA
+// 
 
 const Inicio = () => {
-  const [videoIndex, setVideoIndex] = useState<number | null>(null);
-  const video = videoIndex !== null ? VIDEOS[videoIndex] : null;
-
-  const openVideo = () => setVideoIndex(0);
-  const closeVideo = () => setVideoIndex(null);
+  const [videoAberto, setVideoAberto] = useState(false);
 
   const buttonClass =
     "px-10 py-3.5 text-sm font-semibold tracking-[0.15em] uppercase rounded-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {/* Hero em tela cheia */}
+      {/* Tela cheia com imagem de fundo */}
       <div className="relative w-full h-screen min-h-[600px]">
         <img
           src={heroImage}
-          alt="Interior de loja de decoração com cerâmicas, têxteis e móveis de madeira"
+          alt="Imagem do projeto"
           className="absolute inset-0 w-full h-full object-cover object-center animate-ken-burns"
         />
         <div className="absolute inset-0 bg-black/35" />
@@ -44,25 +51,26 @@ const Inicio = () => {
                 </p>
 
                 <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tight text-white mb-8 leading-[1.05] animate-fade-up">
-                  TÍTULO DO
-                  <br />
-                  TRABALHO
+                  {DADOS_DO_GRUPO.titulo}
                 </h1>
 
                 <p className="text-sm md:text-base leading-relaxed text-white/75 max-w-lg">
-                  XXXXXXXXXXXXXX (DESCRIÇÃO BÁSICA DO SEU TRABALHO)
+                  {DADOS_DO_GRUPO.descricao}
                 </p>
               </div>
 
-              {/* Contato + CTA (desktop) */}
+              {/* Matérias + Botão (desktop) */}
               <div className="hidden md:flex flex-col gap-6 text-white pt-4">
                 <div className="leading-relaxed font-medium space-y-1">
-                  <p>Programação</p>
-                  <p>Física</p>
-                  <p>Robótica</p>
+                  {DADOS_DO_GRUPO.materias.map((materia) => (
+                    <p key={materia}>{materia}</p>
+                  ))}
                 </div>
 
-                <button onClick={openVideo} className={`${buttonClass} bg-white text-foreground hover:bg-white/90`}>
+                <button
+                  onClick={() => setVideoAberto(true)}
+                  className={`${buttonClass} bg-white text-foreground hover:bg-white/90`}
+                >
                   ▶ Assistir vídeo
                 </button>
               </div>
@@ -71,53 +79,42 @@ const Inicio = () => {
         </div>
       </div>
 
-      {/* Matérias + CTA (mobile) */}
+      {/* Matérias + Botão (mobile) */}
       <div className="md:hidden bg-foreground text-background px-6 py-8 space-y-4 text-sm">
         <div className="leading-relaxed font-medium space-y-1">
-          <p>Programação</p>
-          <p>Física</p>
-          <p>Robótica</p>
+          {DADOS_DO_GRUPO.materias.map((materia) => (
+            <p key={materia}>{materia}</p>
+          ))}
         </div>
-        <button onClick={openVideo} className={`${buttonClass} w-full bg-background text-foreground`}>
+        <button
+          onClick={() => setVideoAberto(true)}
+          className={`${buttonClass} w-full bg-background text-foreground`}
+        >
           ▶ Assistir vídeo
         </button>
       </div>
 
       {/* Player do vídeo */}
-      {video && (
+      {videoAberto && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-black/80 animate-overlay-in" onClick={closeVideo} />
+          <div
+            className="absolute inset-0 bg-black/80 animate-overlay-in"
+            onClick={() => setVideoAberto(false)}
+          />
 
           <div className="relative w-full max-w-3xl animate-dialog-in">
             <button
-              onClick={closeVideo}
+              onClick={() => setVideoAberto(false)}
               aria-label="Fechar vídeo"
               className="absolute -top-10 right-0 text-white/80 hover:text-white"
             >
               <X className="w-6 h-6" />
             </button>
 
-            {VIDEOS.length > 1 && (
-              <div className="flex flex-wrap gap-2 mb-3">
-                {VIDEOS.map((v, i) => (
-                  <button
-                    key={v.id}
-                    onClick={() => setVideoIndex(i)}
-                    className={`px-3 py-1.5 text-xs rounded-sm ${
-                      i === videoIndex ? "bg-white text-foreground" : "bg-white/20 text-white"
-                    }`}
-                  >
-                    {v.title}
-                  </button>
-                ))}
-              </div>
-            )}
-
             <div className="aspect-video w-full bg-black rounded-sm overflow-hidden">
               <iframe
-                key={video.id}
-                src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
-                title={video.title}
+                src={`https://www.youtube.com/embed/${DADOS_DO_GRUPO.videoYouTube}?autoplay=1&rel=0`}
+                title="Vídeo do projeto"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
                 allowFullScreen
