@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import heroImage from "@/assets/hero-home-decor.jpg";
+import heroImage from "@/IMAGENS/imagem-principal.jpg";
 
 // Edite aqui: adicione ou remova vídeos. Basta o ID do YouTube.
 const VIDEOS = [
@@ -8,7 +8,7 @@ const VIDEOS = [
   // { id: "OUTRO_ID", title: "Tour pela loja" },
 ];
 
-const Index = () => {
+const Inicio = () => {
   const [videoIndex, setVideoIndex] = useState<number | null>(null);
   const video = videoIndex !== null ? VIDEOS[videoIndex] : null;
 
@@ -130,4 +130,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Inicio;
