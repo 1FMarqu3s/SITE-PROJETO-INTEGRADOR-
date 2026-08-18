@@ -146,3 +146,23 @@ Se o site parar de funcionar ou não carregar as informações:
 *   Caso o erro persista, verifique a aba **"Problems"** no rodapé do editor ou peça AJUDAA - estou aqui prof Fernando haha.
 
 ---
+### 11. 📌 Como abrir o projeto no dia da apresentação
+Para apresentar o seu projeto, abra o link abaixo no navegador:
+
+https://stackblitz.com/github/SEU_USUARIO/NOME_DO_REPOSITORIO
+
+Atenção: substitua SEU_USUARIO pelo seu login do GitHub e NOME_DO_REPOSITORIO pelo nome do repositório que você criou ao fazer o Fork(COPIA).
+Exemplo:
+https://stackblitz.com/github/maria-silva/projeto-integrador-grupo-1
+
+Passo a passo:
+1-Abra o link no navegador (Chrome, Edge ou Firefox)
+2-O projeto começa a carregar automaticamente
+3-Aguarde — na primeira vez pode demorar de 1 a 2 minutos para configurar o ambiente
+4-Quando terminar, você verá o editor de código à esquerda e o preview do site à direita
+5-Clique no ícone de janela ("Open in new tab") no canto do preview para abrir o site em tela cheia
+6-Pronto para apresentar!
+
+💡 Dica: abra o link antes da apresentação começar, para deixar o projeto carregado e evitar atrasos.
+
+---
