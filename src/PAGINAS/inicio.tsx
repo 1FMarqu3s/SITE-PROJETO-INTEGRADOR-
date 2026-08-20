@@ -11,8 +11,9 @@ const DADOS_DO_GRUPO = {
   titulo: "TÍTULO DO TRABALHO",                    // ← Troque pelo título
   descricao: "DESCRIÇÃO BÁSICA DO SEU TRABALHO",   // ← Troque pela descrição
   materias: ["Programação", "Física", "Robótica"], // ← Troque pelas matérias
-  videoYouTube: "u4lcUooNNLY",                     // ← ID do vídeo do YouTube ID E SEMPRE O QUE ESTA NO FINAL DO LINK, DEPOIS DO V= EX: https://www.youtube.com/watch?v=**dQw4w9WgXcQ**
+  videoYouTube: "dQw4w9WgXcQ",                     // ← ID do vídeo do YouTube (o que vem depois do v=)
   imagem: "imagem-principal.jpg",                  // ← Nome da imagem na pasta IMAGENS
+  nomeProjeto: "Projeto Integrador",               // ← Nome que aparece no topo da página
 };
 
 // 
@@ -38,7 +39,7 @@ const Inicio = () => {
 
         <header className="absolute top-0 left-0 right-0 z-50 animate-fade-in">
           <div className="flex items-center h-16 max-w-6xl mx-auto px-6 md:px-12">
-            <span className="font-bold text-lg md:text-xl text-white">Projeto Integrador</span>
+            <span className="font-bold text-lg md:text-xl text-white">{DADOS_DO_GRUPO.nomeProjeto}</span>
           </div>
         </header>
 
