@@ -1,5 +1,3 @@
-17 de agosto de 2026
-
 Projeto Integrador
 
 GUIA DO ALUNO
