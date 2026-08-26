@@ -4,8 +4,6 @@ GUIA DO ALUNO
 
 Instruções para edição e apresentação do projeto
 
-17 de agosto de 2026
-
 ---
 
 ### 1. Como abrir o projeto
