@@ -162,3 +162,12 @@ Passo a passo:
 💡 Dica: abra o link antes da apresentação começar, para deixar o projeto carregado e evitar atrasos.
 
 ---
+
+### 12. 📌 Como abrir o projeto no dia da apresentação 2 OPÇÃO (MELHOR)
+
+1-Acesse vercel.com e clique em "Continue with GitHub"
+2-Clique em "Add New" → "Project"
+3-Importe o repositório SITE-PROJETO-INTEGRADOR-
+4-O Vercel detecta que é Vite automaticamente — só clicar em "Deploy"
+5-Em ~1 minuto você tem um link permanente tipo:
+https://site-projeto-integrador.vercel.app
