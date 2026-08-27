@@ -13,7 +13,7 @@ const DADOS_DO_GRUPO = {
   materias: ["Programação", "Física", "Robótica"], // ← Troque pelas matérias
   videoYouTube: "22nd99SLgNA",                     // ← ID do vídeo do YouTube (o que vem depois do v=)
   imagem: "imagem-principal.jpg",                  // ← Nome da imagem na pasta IMAGENS
-  nomeProjeto: "Fernando Marques",               // ← Nome que aparece no topo da página
+  nomeProjeto: "Projeto Integrador",               // ← Nome que aparece no topo da página
 };
 
 // 
